@@ -1,8 +1,7 @@
 # Netlify configuration
 
 [build]
-  base    = "SEO Portfolio"
-  publish = "SEO Portfolio"
+  publish = "."
 
 # Performance & security headers
 [[headers]]
@@ -30,3 +29,9 @@
   for = "*.js"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
+
+# Clean URLs — serve index.html for /
+[[redirects]]
+  from   = "/"
+  to     = "/index.html"
+  status = 200

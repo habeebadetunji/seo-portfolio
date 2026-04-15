@@ -2,16 +2,16 @@
    DESIGN TOKENS
 ============================================================ */
 :root {
-  --color-bg: #09090b;
-  --color-bg-2: #111113;
-  --color-bg-card: #18181b;
-  --color-border: #27272a;
-  --color-text: #e4e4e7;
-  --color-text-muted: #71717a;
-  --color-accent: #00d4aa;
-  --color-accent-dim: rgba(0, 212, 170, 0.12);
-  --color-accent-hover: #00f0c2;
-  --color-white: #ffffff;
+  --color-bg: #ffffff;
+  --color-bg-2: #f8fafc;
+  --color-bg-card: #f1f5f9;
+  --color-border: #e2e8f0;
+  --color-text: #334155;
+  --color-text-muted: #64748b;
+  --color-accent: #2563eb;
+  --color-accent-dim: rgba(37, 99, 235, 0.08);
+  --color-accent-hover: #1d4ed8;
+  --color-white: #0f172a;
 
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
   --font-display: 'Sora', 'Inter', system-ui, sans-serif;
@@ -21,8 +21,8 @@
   --radius-lg: 22px;
   --radius-xl: 32px;
 
-  --shadow-card: 0 1px 3px rgba(0,0,0,0.4), 0 8px 32px rgba(0,0,0,0.3);
-  --shadow-accent: 0 0 40px rgba(0, 212, 170, 0.15);
+  --shadow-card: 0 1px 3px rgba(0,0,0,0.06), 0 8px 24px rgba(0,0,0,0.08);
+  --shadow-accent: 0 0 40px rgba(37, 99, 235, 0.12);
 
   --max-width: 1160px;
   --nav-h: 68px;
@@ -137,7 +137,7 @@ button {
 
 .btn-primary {
   background: var(--color-accent);
-  color: #07251f;
+  color: #ffffff;
 }
 .btn-primary:hover, .btn-primary:focus-visible {
   background: var(--color-accent-hover);
@@ -174,7 +174,7 @@ button {
 }
 
 .site-header.scrolled {
-  background: rgba(9, 9, 11, 0.85);
+  background: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-color: var(--color-border);
@@ -260,7 +260,7 @@ button {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse 60% 50% at 70% 50%, rgba(0,212,170,0.07) 0%, transparent 70%);
+  background: radial-gradient(ellipse 60% 50% at 70% 50%, rgba(37,99,235,0.06) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -350,12 +350,16 @@ button {
   align-items: start;
 }
 
+.about-img-wrap {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
 .about-img-frame {
   border-radius: var(--radius-lg);
   overflow: hidden;
   border: 1px solid var(--color-border);
   box-shadow: var(--shadow-card);
-  margin-bottom: 1.5rem;
 }
 
 .about-img-frame img {
@@ -364,6 +368,23 @@ button {
   aspect-ratio: 6/7;
   object-fit: cover;
   display: block;
+}
+
+.about-badge {
+  position: absolute;
+  bottom: 1.25rem;
+  left: -1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  padding: 0.55rem 1rem;
+  border-radius: var(--radius-md);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  box-shadow: var(--shadow-card);
 }
 
 .tool-chips {
@@ -480,7 +501,7 @@ button {
   position: absolute;
   top: 1rem;
   left: 1rem;
-  background: rgba(9, 9, 11, 0.75);
+  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(8px);
   border: 1px solid var(--color-border);
   color: var(--color-accent);
@@ -847,7 +868,7 @@ button {
     position: fixed;
     top: var(--nav-h);
     inset-inline: 0;
-    background: rgba(9, 9, 11, 0.97);
+    background: rgba(255, 255, 255, 0.98);
     backdrop-filter: blur(20px);
     flex-direction: column;
     padding: 1.25rem;
