@@ -47,49 +47,6 @@ window.addEventListener('scroll', setActiveLink, { passive: true });
 setActiveLink();
 
 /* ============================================================
-   CONTACT FORM — Formspree AJAX submission
-============================================================ */
-const form       = document.getElementById('contact-form');
-const formStatus = document.getElementById('form-status');
-
-if (form) {
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-
-    const submitBtn = form.querySelector('[type="submit"]');
-    const originalText = submitBtn.textContent;
-
-    submitBtn.disabled = true;
-    submitBtn.textContent = 'Sending…';
-    formStatus.textContent = '';
-    formStatus.className = 'form-status';
-
-    try {
-      const data = new FormData(form);
-      const response = await fetch(form.action, {
-        method: 'POST',
-        body: data,
-        headers: { Accept: 'application/json' }
-      });
-
-      if (response.ok) {
-        formStatus.textContent = 'Message sent! I\'ll get back to you soon.';
-        formStatus.className = 'form-status success';
-        form.reset();
-      } else {
-        throw new Error('Server error');
-      }
-    } catch {
-      formStatus.textContent = 'Something went wrong. Please email me directly.';
-      formStatus.className = 'form-status error';
-    } finally {
-      submitBtn.disabled = false;
-      submitBtn.textContent = originalText;
-    }
-  });
-}
-
-/* ============================================================
    FOOTER YEAR — keep copyright current automatically
 ============================================================ */
 const yearEl = document.getElementById('year');

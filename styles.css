@@ -265,10 +265,7 @@ button {
 }
 
 .hero-inner {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: clamp(2rem, 6vw, 5rem);
-  align-items: center;
+  max-width: 760px;
 }
 
 .hero-eyebrow {
@@ -336,43 +333,6 @@ button {
 }
 
 /* Profile photo */
-.hero-image-wrap {
-  position: relative;
-  flex-shrink: 0;
-}
-
-.hero-photo {
-  width: clamp(240px, 28vw, 380px);
-  height: auto;
-  aspect-ratio: 4/5;
-  object-fit: cover;
-  border-radius: var(--radius-xl);
-  border: 1px solid var(--color-border);
-  box-shadow: var(--shadow-card), var(--shadow-accent);
-}
-
-/* Placeholder style when no image */
-.hero-photo[src="images/profile.jpg"]:not([complete]) {
-  background: var(--color-bg-card);
-}
-
-.hero-badge {
-  position: absolute;
-  bottom: 1.5rem;
-  left: -1.5rem;
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  background: var(--color-bg-card);
-  border: 1px solid var(--color-border);
-  padding: 0.6rem 1rem;
-  border-radius: var(--radius-md);
-  font-size: 0.82rem;
-  font-weight: 600;
-  color: var(--color-accent);
-  box-shadow: var(--shadow-card);
-  backdrop-filter: blur(8px);
-}
 
 /* ============================================================
    ABOUT
@@ -696,10 +656,8 @@ button {
    CONTACT
 ============================================================ */
 .contact-inner {
-  display: grid;
-  grid-template-columns: 1fr 1.1fr;
-  gap: clamp(2.5rem, 6vw, 5rem);
-  align-items: start;
+  max-width: 600px;
+  margin-inline: auto;
 }
 
 .contact-text h2 {
@@ -874,9 +832,6 @@ button {
     width: 100%;
   }
 
-  .contact-inner {
-    grid-template-columns: 1fr;
-  }
 }
 
 /* ============================================================
@@ -902,19 +857,6 @@ button {
   .nav-links.open { display: flex; }
   .nav-links a { width: 100%; padding: 0.875rem 1rem; }
 
-  .hero-inner {
-    grid-template-columns: 1fr;
-  }
-  .hero-image-wrap {
-    order: -1;
-    display: flex;
-    justify-content: center;
-  }
-  .hero-photo {
-    width: clamp(200px, 65vw, 280px);
-    height: auto;
-  }
-  .hero-badge { left: 50%; transform: translateX(-50%); white-space: nowrap; }
   .hero-headline { font-size: clamp(2rem, 8vw, 2.8rem); }
   .hero-stats { flex-wrap: wrap; gap: 1.25rem; }
 
